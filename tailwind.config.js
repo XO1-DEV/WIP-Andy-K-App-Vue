@@ -12,6 +12,9 @@ export default {
       lineHeight: {
         'default': '1.5',
       },
+      spacing: {
+        '30': '7.5rem', // 30 * 0.25rem = 7.5rem (120px)
+      },
       colors: {
         primary: {
           50: '#eff6ff',

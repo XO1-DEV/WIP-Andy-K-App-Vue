@@ -1,0 +1,221 @@
+Redécoupe et réorganise mes pages en gardant leur design et structure intact et en respectant les directives ci-dessous.
+
+1/ Directives pour les langages à utiliser :
+Je veux que tu utilises les technologies React couplées à Tailwind V4, Typescript et Vue.js.
+L'architecture de mon site doit être orientée Agile, c'est-à-dire que chaque composant doit être un fichier spécifique et que mes pages doivent être découpées et composées de plusieurs composants cela pour faciliter au maximum la mise à jour de mon site.
+Pour le moment il n'y a aucun espace d'administration du site mais il faut que l'architecture du site puisse le permettre.
+Il n'y a pour le moment pas de système de comptes utilisateur ou de session utilisateur mais l'architecture du site et de son développement doit permettre un ajout futur le plus simplement possible.
+Le système multilangues est prévu dans une v2 mais implémente déjà le système (ne traduit pas les texte pour le moment) pour qu'à chaque fois qu'un texte en dur est écrit, il puisse y avoir une traduction dans au moins les langues suivantes : Français, Anglais, Espagnol, Allemand.
+
+
+2/ Directives pour l'accessibilité du site :
+Toutes les couleurs, tailles de textes et d'éléments doivent être gérés dans un système de thème permettant, dans une V2, la création d'un outils permettant de switcher et personnaliser l'affichage un peu comme le fait https://github.com/access42/AccessConfig.
+Mon site doit être entièrement navigable au clavier et accessible pour les lecteurs audios.
+Créer un système permettant les choses suivantes : 
+- Chaque fois qu'un bouton ou élément intéractif ou décoratif est créé, ajoute des "balises" d'accessibilité avec une description de l'action et stocke ce texte dans un fichier regroupant tous les textes liés à l'accessibilité.
+- Le fichier contenant tous les textes liés à l'accessibilité des éléments du site doit pouvoir éditer facilement leur contenu et leur répercussion sur les éléments liés de l'UI.
+- Dans ce fichier ajoute également toutes les "balises" alt et autre texte de description avec les IDs / Keys de leurs éléments liés (pour faire les futures mises à jour).
+- Ce fichier doit être également pris en compte pour le futur système de traduction du site.
+
+3/ Directives pour librairies et composants à utiliser : 
+Utilise la librairie Ant Design (antd) pour tous les composants de mon site et adapte-les en fonction de mon design système. 
+Utilise la librairie framer-motion (motion) pour animer les éléments de mon site.
+Utilise la librairie phosphor-icons pour tous les icons de mon site.
+Utilise toujours les couleurs et polices de mon design système en respectant toujours toutes les directives suivantes.
+Pour la pérennité du projet, fait en sorte d'avoir uniquement 1 fichier CSS bien structuré pour gérer les récurrences de classes Tailwind utilisées pour des éléments similaires. Dans le cas où il n'y a pas de récurrences dans l'utilisation de classes Tailwind pour un même type d'élément alors, utilise directement les classes au sein d'un attribut className sur celui-ci.
+
+4/ Directives pour la construction du CSS : 
+Crée des variables customs pour les dégradés tailwind suivants :
+- [conic-gradient(from_180deg_at_50.00%_50.00%,_rgba(240,_66,_186,_0.08)_22deg,_rgba(142.20,_59,_194.20,_0.08)_83deg,_rgba(79,_57,_246,_0.08)_170deg,_rgba(0,_188,_125,_0.08)_270deg,_rgba(255,_210,_48,_0.08)_336deg)]
+- [conic-gradient(from_180deg_at_50.00%_50.00%,_rgba(240,_66,_186,_1)_22deg,_rgba(142.20,_59,_194.20,_1)_83deg,_rgba(79,_57,_246,_1)_170deg,_rgba(0,_188,_125,_1)_270deg,_rgba(255,_210,_48,_1)_336deg)]
+- [radial-gradient(ellipse_240.78%_1162.12%_at_-20.25%_0.00%,_#BEDBFF_0%,_#4F39F6_51%,_#DBEAFE_100%)]
+- [radial-gradient(ellipse_318.22%_1311.24%_at_-40.60%_-81.82%,_#1C398E_0%,_#4E2ADE_53%,_#1C398E_100%)]
+Pour la construction du système de thème, voici les couleurs du thème par défaut (light) à utiliser : 
+"primary": {
+   "50": {
+     "value": "#eff6ff",
+     "type": "color",
+   },
+   "100": {
+     "value": "#dbeafe",
+     "type": "color"
+   },
+   "200": {
+     "value": "#bedbff",
+     "type": "color"
+   },
+   "400": {
+     "value": "#4f39f6",
+     "type": "color"
+   },
+   "600": {
+     "value": "#4e2ade",
+     "type": "color"
+   },
+   "800": {
+     "value": "#1c398e",
+     "type": "color"
+   }
+ },
+ "purple": {
+   "50": {
+     "value": "#faf5ff",
+     "type": "color"
+   },
+   "100": {
+     "value": "#f3e8ff",
+     "type": "color"
+   },
+   "200": {
+     "value": "#e9d4ff",
+     "type": "color"
+   },
+   "400": {
+     "value": "#8e3bc2",
+     "type": "color"
+   },
+   "600": {
+     "value": "#720ab3",
+     "type": "color"
+   },
+   "800": {
+     "value": "#3f0080",
+     "type": "color"
+   }
+ },
+ "green": {
+   "50": {
+     "value": "#ecfdf5",
+     "type": "color"
+   },
+   "100": {
+     "value": "#d0fae5",
+     "type": "color"
+   },
+   "200": {
+     "value": "#a4f4cf",
+     "type": "color"
+   },
+   "400": {
+     "value": "#00bc7d",
+     "type": "color"
+   },
+   "600": {
+     "value": "#2aa373",
+     "type": "color"
+   },
+   "800": {
+     "value": "#007040",
+     "type": "color"
+   }
+ },
+ "pink": {
+   "50": {
+     "value": "#fff0fa",
+     "type": "color"
+   },
+   "100": {
+     "value": "#fecdef",
+     "type": "color"
+   },
+   "200": {
+     "value": "#f57bcf",
+     "type": "color"
+   },
+   "400": {
+     "value": "#f042ba",
+     "type": "color",
+     "description": "AA Uniquement éléments UI avec bleu, blanc et noir"
+   },
+   "600": {
+     "value": "#bd0f87",
+     "type": "color"
+   },
+   "800": {
+     "value": "#870052",
+     "type": "color"
+   }
+ },
+ "yellow": {
+   "50": {
+     "value": "#fdf9e7",
+     "type": "color"
+   },
+   "100": {
+     "value": "#fef3c6",
+     "type": "color"
+   },
+   "200": {
+     "value": "#fee685",
+     "type": "color"
+   },
+   "400": {
+     "value": "#ffd230",
+     "type": "color"
+   },
+   "600": {
+     "value": "#edbe0e",
+     "type": "color"
+   },
+   "800": {
+     "value": "#6e3f00",
+     "type": "color"
+   }
+ },
+ "neutral": {
+   "100": {
+     "value": "#eaebea",
+     "type": "color"
+   },
+   "200": {
+     "value": "#c5c6c5",
+     "type": "color"
+   },
+   "400": {
+     "value": "#929392",
+     "type": "color"
+   },
+   "600": {
+     "value": "#545654",
+     "type": "color"
+   },
+   "white": {
+     "value": "#f8f9f8",
+     "type": "color"
+   },
+   "black": {
+     "value": "#2c241e",
+     "type": "color"
+   }
+ },
+ "alert": {
+   "50": {
+     "value": "#fef2f2",
+     "type": "color"
+   },
+   "100": {
+     "value": "#ffe2e2",
+     "type": "color"
+   },
+   "200": {
+     "value": "#ffc9c9",
+     "type": "color"
+   },
+   "400": {
+     "value": "#fb2c36",
+     "type": "color"
+   },
+   "600": {
+     "value": "#e7000b",
+     "type": "color"
+   },
+   "800": {
+     "value": "#9f0712",
+     "type": "color"
+   }
+ },
+
+Toujours pour ce système de thème, voici la police du site : 
+Atkinson Hyperlegible https://fonts.google.com/specimen/Atkinson+Hyperlegible?query=atki
+
+La line-height par défaut est 150% de la taille de la police.

@@ -17,8 +17,8 @@
     text-transform: none;
     letter-spacing: normal;
     line-height: 1.5;
-    color: theme('colors.neutral.black');
-    background: theme('colors.neutral.white');
+    color: #2c241e;
+    background: #f8f9f8;
   }
 
   * {

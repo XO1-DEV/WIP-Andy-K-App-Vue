@@ -1,0 +1,180 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.5;
+    color: theme('colors.neutral.black');
+    background: theme('colors.neutral.white');
+  }
+
+  * {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Accessibilité - Skip Links */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-neutral-white focus:rounded-br-md;
+  }
+
+  /* Focus visible pour l'accessibilité */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-600;
+  }
+
+  button:focus-visible, 
+  a:focus-visible, 
+  [tabindex]:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-600;
+  }
+}
+
+@layer components {
+  /* Boutons réutilisables */
+  .btn-primary {
+    @apply gap-1.5 h-11 flex px-8 items-center flex-shrink-0 border border-primary-600 rounded-md justify-center bg-primary-600 text-neutral-white font-bold text-base leading-5 transition-all duration-200 hover:bg-primary-800 hover:border-primary-800 focus:ring-2 focus:ring-primary-200;
+  }
+
+  .btn-secondary {
+    @apply gap-1.5 h-11 flex px-8 items-center flex-shrink-0 border border-primary-600 rounded-md justify-center bg-transparent text-primary-600 font-bold text-base leading-5 transition-all duration-200 hover:bg-primary-50 focus:ring-2 focus:ring-primary-200;
+  }
+
+  .btn-ghost {
+    @apply gap-1.5 h-11 flex px-4 items-center flex-shrink-0 rounded-md justify-center bg-transparent text-primary-600 font-medium text-base leading-5 transition-all duration-200 hover:bg-primary-50 focus:ring-2 focus:ring-primary-200;
+  }
+
+  /* Tags/badges réutilisables */
+  .tag-visual {
+    @apply gap-1 flex py-1 px-2 items-center rounded-3xl justify-end bg-yellow-100 text-yellow-800 text-sm font-normal leading-default;
+  }
+
+  /* Cards réutilisables */
+  .card-mission {
+    @apply gap-2 flex p-6 relative items-start flex-shrink-0 rounded-3xl flex-col bg-primary-50;
+  }
+
+  /* Navigation principale */
+  .nav-main {
+    @apply gap-30 w-full h-20 flex px-20 z-10 items-center flex-shrink-0 justify-between bg-neutral-white;
+  }
+
+  .nav-links {
+    @apply gap-10 flex items-center text-neutral-black text-lg font-bold leading-default;
+  }
+
+  /* Header d'accessibilité */
+  .accessibility-header {
+    @apply gap-2 w-full h-10 flex items-center flex-shrink-0 justify-center bg-primary-50;
+  }
+
+  /* Steppers */
+  .stepper-active {
+    @apply w-10 h-10 p-1 items-center border-2 border-primary-600 rounded-full;
+  }
+
+  .stepper-active-inner {
+    @apply gap-2 w-full h-full flex p-1.5 items-center flex-shrink-0 rounded-full bg-primary-600;
+  }
+
+  .stepper-inactive {
+    @apply w-10 h-10 p-1 items-center rounded-full bg-primary-200;
+  }
+
+  .stepper-line-active {
+    @apply gap-2 flex-1 flex overflow-hidden items-start flex-shrink-0 rounded-full flex-col bg-primary-200;
+  }
+
+  .stepper-line-progress {
+    @apply w-3/5 border-2 border-dashed border-gray-400 h-full flex items-start rounded-full flex-col bg-primary-600;
+  }
+}
+
+@layer utilities {
+  /* Utilitaires pour les animations et transitions */
+  .transition-base {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .transition-slow {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Utilitaires pour le responsive design */
+  .container-main {
+    @apply w-full max-w-screen-2xl mx-auto;
+  }
+
+  /* Utilitaires pour la typographie */
+  .text-heading-1 {
+    @apply text-5xl font-bold leading-default;
+  }
+
+  .text-heading-2 {
+    @apply text-4xl font-bold leading-default;
+  }
+
+  .text-heading-3 {
+    @apply text-2xl font-bold leading-default;
+  }
+
+  .text-body-large {
+    @apply text-lg font-normal leading-default;
+  }
+
+  .text-body {
+    @apply text-base font-normal leading-default;
+  }
+
+  .text-body-small {
+    @apply text-sm font-normal leading-default;
+  }
+
+  /* Support pour le mode sombre (préparation future) */
+  @media (prefers-color-scheme: dark) {
+    .dark-mode {
+      /* Variables CSS pour le thème sombre - à implémenter plus tard */
+    }
+  }
+
+  /* Amélioration de l'accessibilité */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .not-sr-only {
+    @apply static w-auto h-auto p-0 m-0 overflow-visible whitespace-normal;
+  }
+
+  /* Utilitaires pour les gradients personnalisés */
+  .bg-gradient-conic-light {
+    background-image: theme('backgroundImage.conic-gradient-light');
+  }
+
+  .bg-gradient-conic-full {
+    background-image: theme('backgroundImage.conic-gradient-full');
+  }
+
+  .bg-gradient-radial-blue {
+    background-image: theme('backgroundImage.radial-gradient-blue');
+  }
+
+  .bg-gradient-radial-dark {
+    background-image: theme('backgroundImage.radial-gradient-dark');
+  }
+}

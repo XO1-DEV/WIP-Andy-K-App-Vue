@@ -1,34 +1,38 @@
 {
-  "name": "wip-andy-k-app",
+  "name": "andy-k-app-react",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "vue": "^2.6.7",
-    "vue-router": "^3.0.2",
-    "vue-meta": "^2.2.1",
-    "@lottiefiles/vue-lottie-player": "1.0.4",
-    "next": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "antd": "^5.12.8",
+    "framer-motion": "^10.16.16",
+    "phosphor-react": "^1.4.1",
+    "i18next": "^23.7.6",
+    "react-i18next": "^13.5.0",
+    "i18next-browser-languagedetector": "^7.2.0"
   },
   "devDependencies": {
-    "@vue/babel-preset-app": "^5.0.8",
-    "@vue/cli-plugin-babel": "^5.0.4",
-    "@vue/cli-service": "^5.0.8",
-    "vue-template-compiler": "^2.6.7"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^4.0.0-alpha.25",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
 }
